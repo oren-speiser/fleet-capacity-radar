@@ -81,26 +81,26 @@ a{color:var(--cyan)}
 </main>
 <section class="pane" style="border-top:1px solid var(--grid)">
 <h2>Validated early warning</h2>
-<div class="cap" style="max-width:900px">The same latched detector this portfolio runs on Li-ion cells, bearings and gear run-to-fail data was calibrated on 10 healthy Starlink satellites only, then applied unchanged to 21 real deorbits (December 2025 to June 2026, three per month), across 28,825 archived element sets.</div>
+<div class="cap" style="max-width:900px">The same latched detector this portfolio runs on Li-ion cells, bearings and gear run-to-fail data runs in two tiers, red and amber, both calibrated on 10 healthy Starlink satellites only and then applied unchanged to 21 real deorbits (December 2025 to June 2026, three per month), across 28,825 archived element sets.</div>
 <div class="chips" style="padding:4px 0 14px;border:0">
 <div class="chip">DETECTED <b style="color:#D7E3EC">21 / 21</b></div>
 <div class="chip">FALSE ALARMS <b style="color:#D7E3EC">0 / 10</b> over 13 months</div>
-<div class="chip">MEDIAN WARNING <b style="color:#FFB454">49 days</b> before burn-up</div>
-<div class="chip">RANGE <b style="color:#D7E3EC">6 to 243 days</b></div>
+<div class="chip">MEDIAN WARNING <b style="color:#FFB454">167 days</b> before burn-up</div>
+<div class="chip">RANGE <b style="color:#D7E3EC">14 to 249 days</b></div>
 <div class="chip">AHEAD OF TERMINAL PLUNGE <b style="color:#D7E3EC">21 / 21</b></div>
 </div>
 <div id="lwrap" style="border:1px solid var(--grid);background:var(--panel);border-radius:4px;max-width:900px">
 <canvas id="lc" width="900" height="150" aria-label="Lead time in days for each of the 21 deorbits"></canvas></div>
-<div class="cap" style="max-width:900px;margin-top:10px">Alarm rule: sustained altitude loss above 2.9 km/day for 5 consecutive days, latched. The threshold was set from the healthy cohort alone, which included one real 1.9 km/day maneuver episode it absorbed without alarm. Per-satellite table: starlink_earlywarning_results.csv in this repository.</div>
+<div class="cap" style="max-width:900px;margin-top:10px">Alarm rules, both latched and both set from the healthy cohort alone: red fires on loss above 2.9 km/day for 5 consecutive days; amber fires on loss above 0.05 km/day for 24 consecutive days, a persistence window set to twice the longest gentle-descent episode ever observed in a healthy satellite. The single-threshold baseline scored a 49-day median with the same protocol; the amber tier lifted the six weakest cases from 6 to 10 days of warning up to 149 to 247 days. Per-satellite table: starlink_earlywarning_results.csv in this repository.</div>
 <script>
-(function(){const L=[6,6,7,7,9,10,14,21,37,41,49,56,66,78,157,158,167,205,217,218,243];
+(function(){const L=[14,21,66,78,105,117,149,157,158,165,167,167,178,183,205,217,218,237,243,247,249];
 const c=document.getElementById('lc'),x=c.getContext('2d');const W=c.width,H=c.height,P=34;
 x.fillStyle='#141E2B';x.fillRect(0,0,W,H);
 const bw=(W-2*P)/L.length,mx=250;
 x.font='10px IBM Plex Mono';
-L.forEach((v,i)=>{const h=(H-40)*v/mx;x.fillStyle=v>=49?'#FFB454':'#59C3D8';
+L.forEach((v,i)=>{const h=(H-40)*v/mx;x.fillStyle=v>=167?'#FFB454':'#59C3D8';
 x.fillRect(P+i*bw+2,H-24-h,bw-4,h);});
-x.fillStyle='#7E93A6';x.fillText('each bar = one real deorbit · days of warning before reentry · amber = above the 49-day median',P,H-8);
+x.fillStyle='#7E93A6';x.fillText('each bar = one real deorbit · days of warning before reentry · amber = above the 167-day median',P,H-8);
 x.strokeStyle='#22364a';x.beginPath();x.moveTo(P,H-24);x.lineTo(W-P,H-24);x.stroke();})();
 </script>
 </section>
