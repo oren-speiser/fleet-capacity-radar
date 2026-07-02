@@ -29,8 +29,10 @@ Most Starlink reentries are controlled descents initiated by the operator, not s
 
 Fleet snapshot: CelesTrak GP data (public). Historical element sets: Space-Track gp_history for 21 decayed satellites (selected from the public decay catalog, three per month) and 10 operational controls, epoch window June 2025 to July 2026. Raw element sets are not redistributed here, in line with the Space-Track user agreement; the derived per-satellite results are published in full. Detector internals are not exposed.
 
+
 ## Author
 
 Oren A. L. Speiser · ORCID 0009-0001-1205-4079 · Portfolio hub: https://oren-speiser.github.io/stability-diagnostics/
 
 License: MIT (code and page). Derived result files may be reused with attribution.
+
