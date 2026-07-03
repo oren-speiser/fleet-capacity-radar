@@ -104,6 +104,28 @@ x.fillStyle='#7E93A6';x.fillText('each bar = one real deorbit · days of warning
 x.strokeStyle='#22364a';x.beginPath();x.moveTo(P,H-24);x.lineTo(W-P,H-24);x.stroke();})();
 </script>
 </section>
+<section class="pane" style="border-top:1px solid var(--grid)">
+<h2>Prediction journal</h2>
+<div class="cap" style="max-width:900px">A forward, timestamped record. Every flag is committed to this repository the day it fires; when the satellite later reenters, the row becomes a verified prediction with its lead time. Seed rows dated 2026-07-02 are snapshot-state flags from the live board; rows tagged red or amber are fired by the validated two-tier detector on self-logged history as it matures. Timestamps are provable from the commit history. Most reentries are operator-initiated deorbits; the claim is envelope-exit with a measured runway, unchanged.</div>
+<div class="chips" id="pjc" style="padding:4px 0 10px;border:0"></div>
+<div style="max-width:900px;overflow-x:auto"><table id="pjt"><thead><tr><th>Flagged</th><th>Sat</th><th>Alt km</th><th>km/day</th><th>Tier</th><th>Status</th><th>Lead d</th></tr></thead><tbody></tbody></table></div>
+<div class="cap" style="margin-top:8px">Full record: predictions.csv in this repository. Updated daily by an automated workflow.</div>
+<script>
+fetch('predictions.csv').then(r=>r.text()).then(t=>{
+const rows=t.trim().split('\n').slice(1).map(l=>l.split(','));
+const open=rows.filter(r=>r[6]==='open').length, ver=rows.filter(r=>r[6]==='reentered');
+const leads=ver.map(r=>+r[8]).filter(x=>x>0).sort((a,b)=>a-b);
+const med=leads.length?leads[Math.floor(leads.length/2)]:null;
+const c=document.getElementById('pjc');
+c.innerHTML=`<div class="chip">OPEN PREDICTIONS <b style="color:#FFB454">${open}</b></div>
+<div class="chip">VERIFIED REENTRIES <b style="color:#D7E3EC">${ver.length}</b></div>`+
+(med?`<div class="chip">MEDIAN LEAD <b style="color:#FFB454">${med} days</b></div>`:'');
+const tb=document.querySelector('#pjt tbody');
+const show=rows.filter(r=>r[6]==='reentered').concat(rows.filter(r=>r[6]==='open')).slice(0,15);
+tb.innerHTML=show.map(r=>`<tr><td>${r[0]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td class="st">${r[5]}</td><td class="${r[6]==='reentered'?'s0':'s2'}">${r[6]}</td><td>${r[8]||'–'}</td></tr>`).join('');
+}).catch(()=>{});
+</script>
+</section>
 <footer>
 <b>Method.</b> Semi-major axis and its decay rate are derived from each object's public two-line elements; the capacity-state classification applies the same Θ (injection over capacity) framework used by this portfolio's other instruments on hydraulic rigs, Li-ion cells, bearings and gear run-to-fail data. <b>Honest scope:</b> the board above reads the fleet's <i>current</i> state from a public snapshot; the early-warning layer is validated on archived orbital histories with a controls-only calibration protocol (threshold set on healthy satellites, never on the deorbits it was scored against). Most Starlink reentries are controlled descents, so the validated claim is robust, false-alarm-free detection of sustained loss of altitude-hold across the whole fleet with a measured runway to burn-up, not prediction of surprise failures. Raw element sets are not redistributed, per the Space-Track user agreement. Detector internals are not exposed. Built by <a href="https://oren-speiser.github.io/stability-diagnostics/">Oren A. L. Speiser</a> · public data only · no affiliation with SpaceX.
 </footer>
