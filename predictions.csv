@@ -4,10 +4,10 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,53888,SL-5034,159.3,47.76,state-terminal,reentered,2026-07-03,1
 2026-07-02,53434,SL-4498,163.7,43.53,state-terminal,reentered,2026-07-03,1
 2026-07-02,46535,SL-1663,179.5,36.78,state-terminal,reentered,2026-07-03,1
-2026-07-02,53594,SL-4681,176.4,31.84,state-terminal,open,,
-2026-07-02,47604,SL-2021,188.1,29.17,state-terminal,open,,
-2026-07-02,57221,SL-5875,189.7,23.91,state-terminal,open,,
-2026-07-02,47374,SL-2093,201.5,22.34,state-terminal,open,,
+2026-07-02,53594,SL-4681,176.4,31.84,state-terminal,reentered,2026-07-04,2
+2026-07-02,47604,SL-2021,188.1,29.17,state-terminal,reentered,2026-07-04,2
+2026-07-02,57221,SL-5875,189.7,23.91,state-terminal,reentered,2026-07-04,2
+2026-07-02,47374,SL-2093,201.5,22.34,state-terminal,reentered,2026-07-04,2
 2026-07-02,46567,SL-1741,212.6,18.69,state-terminal,open,,
 2026-07-02,47592,SL-1997,207.8,16.06,state-terminal,open,,
 2026-07-02,46155,SL-1667,216.4,13.75,state-terminal,open,,
