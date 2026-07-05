@@ -13,6 +13,8 @@ TLE_URL = "https://celestrak.org/NORAD/elements/gp.php?GROUP=starlink&FORMAT=tle
 HIST = "history.csv"
 PRED = "predictions.csv"
 BOARD = "index.html"
+STORM = "storm_log.csv"
+KP_API = "https://kp.gfz-potsdam.de/app/json/?start={s}T00:00:00Z&end={e}T23:59:59Z&index=Kp"
 TODAY = datetime.date.today().isoformat()
 KEEP_DAYS = 45
 RED_RATE, RED_RUN = 2.904, 5      # km/day sustained, consecutive days (frozen v1)
@@ -76,6 +78,102 @@ def sustained(h_sat, rate, run):
         if (h_sat[d] - h_sat[d7]) / 7.0 > -rate: return False
     return True
 
+
+
+# ---------- STORM WATCH (module inside the radar; safe-fail, never breaks the board) ----------
+
+def gscale(k):
+    if k >= 9: return "G5"
+    if k >= 8: return "G4"
+    if k >= 7: return "G3"
+    if k >= 6: return "G2"
+    if k >= 5: return "G1"
+    return "quiet"
+
+def fetch_kp():
+    # Official planetary Kp from GFZ Potsdam, last 12 days. Returns {date: max_kp} or None.
+    try:
+        d0 = datetime.date.today()
+        url = KP_API.format(s=(d0 - datetime.timedelta(days=12)).isoformat(), e=d0.isoformat())
+        req = urllib.request.Request(url, headers={"User-Agent": "fleet-capacity-radar-stormwatch"})
+        data = json.loads(urllib.request.urlopen(req, timeout=60).read().decode())
+        daily = {}
+        for t, k in zip(data.get("datetime", []), data.get("Kp", [])):
+            if k is None: continue
+            day = t[:10]
+            if k > daily.get(day, -1): daily[day] = k
+        return daily or None
+    except Exception as e:
+        print("storm: kp fetch failed, section skipped:", e)
+        return None
+
+def storm_metrics(hist, day_iso):
+    # Day-over-day altitude loss across the self-logged cohort for `day_iso`.
+    prev = (datetime.date.fromisoformat(day_iso) - datetime.timedelta(days=1)).isoformat()
+    losses = []
+    for h_sat in hist.values():
+        if day_iso in h_sat and prev in h_sat:
+            losses.append(h_sat[prev] - h_sat[day_iso])
+    if len(losses) < 300: return None
+    losses.sort()
+    med = losses[len(losses)//2]
+    heavy = sum(1 for x in losses if x >= 2.0)
+    return {"pairs": len(losses), "median": round(med, 2), "heavy": heavy}
+
+def update_storm(hist):
+    kp_daily = fetch_kp()
+    if not kp_daily: return None
+    d0 = datetime.date.today().isoformat()
+    d1 = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
+    m0 = storm_metrics(hist, d0)
+    # refresh today's row in storm_log.csv (idempotent per date)
+    rows = {}
+    if os.path.exists(STORM):
+        for r in csv.DictReader(open(STORM)):
+            rows[r["date"]] = r
+    kp0 = kp_daily.get(d0)
+    rows[d0] = {"date": d0,
+                "max_kp": "" if kp0 is None else round(kp0, 2),
+                "gscale": "" if kp0 is None else gscale(kp0),
+                "pairs": m0["pairs"] if m0 else "",
+                "heavy_gt2kmday": m0["heavy"] if m0 else "",
+                "median_loss_kmday": m0["median"] if m0 else ""}
+    cols = ["date", "max_kp", "gscale", "pairs", "heavy_gt2kmday", "median_loss_kmday"]
+    with open(STORM, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=cols); w.writeheader()
+        for day in sorted(rows): w.writerow({c: rows[day].get(c, "") for c in cols})
+    # yesterday's heavy count for the day-over-day comparison in the section
+    prev_heavy = rows.get(d1, {}).get("heavy_gt2kmday", "")
+    return {"today": d0, "kp0": kp0, "kp1": kp_daily.get(d1),
+            "m0": m0, "prev_heavy": prev_heavy}
+
+def update_storm_section(s):
+    if not s: return
+    html = open(BOARD, encoding="utf-8").read()
+    kp0 = "n/a" if s["kp0"] is None else f"{s['kp0']:.1f} ({gscale(s['kp0'])})"
+    kp1 = "n/a" if s["kp1"] is None else f"{s['kp1']:.1f} ({gscale(s['kp1'])})"
+    if s["m0"]:
+        prev = f" vs {s['prev_heavy']} the day before" if s["prev_heavy"] != "" else ""
+        resp = (f"HEAVY DECAY (&gt;2 km/day) <b style=\"color:#FFB454\">{s['m0']['heavy']}</b>{prev}"
+                f" \u00b7 MEDIAN DAILY LOSS <b>{s['m0']['median']:+.2f} km</b>"
+                f" \u00b7 cohort {s['m0']['pairs']:,} day-pairs")
+    else:
+        resp = "fleet response: accruing (needs two logged days)"
+    block = ("<!--STORMWATCH-->\n"
+             "<h2>Storm watch</h2>\n"
+             "<div class=\"cap\" style=\"max-width:900px\">Geomagnetic storms inflate the upper atmosphere and raise drag on the whole fleet at once: an external injection spike hitting every satellite simultaneously. This section reads the official planetary Kp index (GFZ Potsdam) next to the fleet's own day-over-day decay response from the self-logged history. Storm-to-drag physics is textbook; a per-satellite pre-storm watchlist is a design target until backtested. Full record: storm_log.csv in this repository, updated daily.</div>\n"
+             f"<div class=\"meta\">KP TODAY <b>{kp0}</b> \u00b7 KP YESTERDAY <b>{kp1}</b> \u00b7 {resp}</div>\n"
+             "<!--/STORMWATCH-->")
+    if "<!--STORMWATCH-->" in html:
+        html2, n = re.subn(r"<!--STORMWATCH-->.*?<!--/STORMWATCH-->", lambda m: block, html, count=1, flags=re.S)
+    else:
+        anchor = "<h2>Prediction journal</h2>"
+        html2, n = (html.replace(anchor, block + "\n" + anchor, 1), 1) if anchor in html else (html, 0)
+    if n == 1:
+        open(BOARD, "w", encoding="utf-8").write(html2)
+        print(f"storm: section updated, kp today {kp0}, kp yesterday {kp1}")
+    else:
+        print("storm: anchor not found, section skipped")
 
 STATE_NAMES = ["OPERATIONAL", "TRANSIT", "ELEVATED", "DECAYING", "TERMINAL"]
 
@@ -145,6 +243,10 @@ def main():
                                       datetime.date.fromisoformat(r["flag_date"])).days
     save_hist(hist); save_pred(pred)
     update_board(sats)
+    try:
+        update_storm_section(update_storm(hist))
+    except Exception as e:
+        print("storm: module error, board unaffected:", e)
     op = sum(1 for r in pred if r["status"] == "open")
     ver = sum(1 for r in pred if r["status"] == "reentered")
     print(f"journal: {op} open, {ver} verified reentries")
