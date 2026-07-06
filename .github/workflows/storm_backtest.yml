@@ -1,0 +1,25 @@
+name: Storm Backtest (manual, one-time)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run backtest
+        env:
+          SPACETRACK_USER: ${{ secrets.SPACETRACK_USER }}
+          SPACETRACK_PASS: ${{ secrets.SPACETRACK_PASS }}
+        run: python3 storm_backtest.py
+
+      - name: Commit results
+        run: |
+          git config user.name "storm-backtest-bot"
+          git config user.email "actions@github.com"
+          git add storm_backtest_results.csv
+          git commit -m "Storm Watch archive backtest results" || echo "no changes"
+          git push
