@@ -161,8 +161,9 @@ def update_storm_section(s):
         resp = "fleet response: accruing (needs two logged days)"
     block = ("<!--STORMWATCH-->\n"
              "<h2>Storm watch</h2>\n"
-             "<div class=\"cap\" style=\"max-width:900px\">Geomagnetic storms inflate the upper atmosphere and raise drag on the whole fleet at once: an external injection spike hitting every satellite simultaneously. This section reads the official planetary Kp index (GFZ Potsdam) next to the fleet's own day-over-day decay response from the self-logged history. Storm-to-drag physics is textbook; a per-satellite pre-storm watchlist is a design target until backtested. Full record: storm_log.csv in this repository, updated daily.</div>\n"
+             "<div class=\"cap\" style=\"max-width:900px\">Geomagnetic storms inflate the upper atmosphere and raise drag on the whole fleet at once: an external injection spike hitting every satellite simultaneously. This section reads the official planetary Kp index (GFZ Potsdam) next to the fleet's own day-over-day decay response from the self-logged history. Storm-to-drag physics is textbook. Full record: storm_log.csv in this repository, updated daily.</div>\n"
              f"<div class=\"meta\">KP TODAY <b>{kp0}</b> \u00b7 KP YESTERDAY <b>{kp1}</b> \u00b7 {resp}</div>\n"
+             "<div class=\"meta\">ARCHIVE BACKTEST (Jul 2026): 22 storms, Dec 2025 to Jul 2026, controls-only threshold, same two decay metrics as the live module. Every storm of class G2 or stronger flagged: <b style=\"color:#7FE08A\">10/10</b> \u00b7 weakest class G1: 5/12 \u00b7 quiet-day controls flagged: <b>0/6</b>. Fixed 500-satellite sample of the current tracking cohort; survivor-bias and methodology notes in storm_backtest_results.csv in this repository.</div>\n"
              "<!--/STORMWATCH-->")
     if "<!--STORMWATCH-->" in html:
         html2, n = re.subn(r"<!--STORMWATCH-->.*?<!--/STORMWATCH-->", lambda m: block, html, count=1, flags=re.S)
