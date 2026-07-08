@@ -104,7 +104,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,51798,SL-3634,481.2,6.6,state-decaying,open,,
 2026-07-02,53570,SL-4550,492.0,6.6,state-decaying,open,,
 2026-07-02,53936,SL-4791,485.2,6.6,state-decaying,open,,
-2026-07-02,47161,SL-1876,246.7,6.58,state-terminal,open,,
+2026-07-02,47161,SL-1876,246.7,6.58,state-terminal,reentered,2026-07-08,6
 2026-07-02,53801,SL-4715,495.3,6.57,state-decaying,open,,
 2026-07-02,49762,SL-3195,501.2,6.54,state-decaying,open,,
 2026-07-02,50845,SL-3230,493.1,6.54,state-decaying,open,,
@@ -118,12 +118,12 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,48022,SL-2298,405.3,6.34,state-decaying,open,,
 2026-07-02,53283,SL-4175,494.5,6.34,state-decaying,open,,
 2026-07-02,47728,SL-2131,374.5,6.18,state-decaying,open,,
-2026-07-02,46172,SL-1635,248.7,6.15,state-terminal,open,,
+2026-07-02,46172,SL-1635,248.7,6.15,state-terminal,reentered,2026-07-08,6
 2026-07-02,51894,SL-3595,477.0,6.13,state-decaying,open,,
 2026-07-02,47767,SL-2185,368.4,6.09,state-decaying,open,,
 2026-07-02,54806,SL-5412,481.4,6.06,state-decaying,open,,
 2026-07-02,53144,SL-4100,489.8,6.02,state-decaying,open,,
-2026-07-02,46784,SL-1882,250.1,5.98,state-decaying,open,,
+2026-07-02,46784,SL-1882,250.1,5.98,state-decaying,reentered,2026-07-08,6
 2026-07-02,52373,SL-3550,477.3,5.9,state-decaying,open,,
 2026-07-02,53147,SL-4094,490.0,5.88,state-decaying,open,,
 2026-07-02,53799,SL-4710,486.9,5.86,state-decaying,open,,
@@ -140,7 +140,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,53282,SL-4164,483.5,5.27,state-decaying,open,,
 2026-07-02,53733,SL-4574,476.3,5.27,state-decaying,open,,
 2026-07-02,53711,SL-4627,479.8,5.2,state-decaying,open,,
-2026-07-02,53899,SL-5042,235.6,5.2,state-terminal,open,,
+2026-07-02,53899,SL-5042,235.6,5.2,state-terminal,reentered,2026-07-08,6
 2026-07-02,51131,SL-3388,483.2,5.12,state-decaying,open,,
 2026-07-02,45685,SL-1402,383.0,5.04,state-decaying,open,,
 2026-07-02,46347,SL-1547,258.1,5.0,state-decaying,open,,
