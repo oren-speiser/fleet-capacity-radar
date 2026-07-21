@@ -166,7 +166,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,53568,SL-4583,502.1,4.33,state-decaying,open,,
 2026-07-02,57432,SL-30188,454.6,4.33,state-decaying,open,,
 2026-07-02,50840,SL-3295,510.3,4.32,state-decaying,open,,
-2026-07-02,51794,SL-3573,278.9,4.27,state-decaying,open,,
+2026-07-02,51794,SL-3573,278.9,4.27,state-decaying,reentered,2026-07-21,19
 2026-07-02,51883,SL-3576,504.3,4.26,state-decaying,open,,
 2026-07-02,53500,SL-4455,328.4,4.23,state-decaying,open,,
 2026-07-02,51782,SL-3616,472.8,4.21,state-decaying,open,,
@@ -200,7 +200,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,53467,SL-4394,365.1,3.06,state-decaying,open,,
 2026-07-02,53506,SL-4437,360.0,3.03,state-decaying,open,,
 2026-07-02,53201,SL-4405,433.1,3.01,state-decaying,open,,
-2026-07-13,46340,SL-1759,252.1,5.13,red,open,,
+2026-07-13,46340,SL-1759,252.1,5.13,red,reentered,2026-07-21,8
 2026-07-13,46689,SL-1788,249.7,4.76,red,reentered,2026-07-20,7
 2026-07-13,46715,SL-1817,244.3,5.26,red,reentered,2026-07-20,7
 2026-07-13,47649,SL-2032,246.7,4.69,red,reentered,2026-07-20,7
@@ -236,7 +236,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-13,53778,SL-4709,493.8,0.09,red,open,,
 2026-07-13,53805,SL-4763,484.8,-0.21,red,open,,
 2026-07-13,53977,SL-5094,510.0,0.28,red,open,,
-2026-07-14,46557,SL-1679,252.7,4.19,red,open,,
+2026-07-14,46557,SL-1679,252.7,4.19,red,reentered,2026-07-21,7
 2026-07-14,47404,SL-2128,255.7,4.0,red,open,,
 2026-07-14,51729,SL-3523,469.2,0.21,red,open,,
 2026-07-14,51746,SL-3502,484.8,-0.08,red,open,,
@@ -411,3 +411,17 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-20,65247,SL-34923,472.7,-0.11,red,open,,
 2026-07-20,65522,SL-35188,472.6,-0.35,red,open,,
 2026-07-20,65526,SL-34674,472.6,-0.34,red,open,,
+2026-07-21,46052,SL-1541,234.7,6.7,red,open,,
+2026-07-21,47568,SL-1967,245.3,5.09,red,open,,
+2026-07-21,52303,SL-3742,477.3,0.75,red,open,,
+2026-07-21,52626,SL-3990,489.4,0.47,red,open,,
+2026-07-21,52642,SL-3971,492.0,0.7,red,open,,
+2026-07-21,52854,SL-4204,498.3,0.19,red,open,,
+2026-07-21,52865,SL-4274,499.7,0.19,red,open,,
+2026-07-21,52866,SL-4272,498.3,0.2,red,open,,
+2026-07-21,53508,SL-4443,489.3,6.77,red,open,,
+2026-07-21,54015,SL-5055,461.9,0.31,red,open,,
+2026-07-21,54191,SL-4619,500.6,0.08,red,open,,
+2026-07-21,54784,SL-5442,489.9,0.51,red,open,,
+2026-07-21,65178,SL-34929,472.8,0.16,red,open,,
+2026-07-21,65183,SL-34939,472.8,0.2,red,open,,
