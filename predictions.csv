@@ -627,7 +627,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,45384,SL-1267,347.9,0.47,amber,open,,
 2026-08-01,45386,SL-1272,330.7,0.52,amber,open,,
 2026-08-01,45387,SL-1274,357.0,0.67,amber,open,,
-2026-08-01,45388,SL-1280,278.0,1.94,amber,open,,
+2026-08-01,45388,SL-1280,278.0,1.94,amber,reentered,2026-08-21,20
 2026-08-01,45389,SL-1283,340.1,0.52,amber,open,,
 2026-08-01,45390,SL-1284,346.6,0.43,amber,open,,
 2026-08-01,45395,SL-1297,336.1,0.6,amber,open,,
@@ -703,7 +703,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,46342,SL-1762,443.4,0.37,amber,open,,
 2026-08-01,46348,SL-1553,440.5,0.2,amber,open,,
 2026-08-01,46351,SL-1646,266.7,4.05,amber,reentered,2026-08-12,11
-2026-08-01,46352,SL-1653,284.6,2.22,amber,open,,
+2026-08-01,46352,SL-1653,284.6,2.22,amber,reentered,2026-08-21,20
 2026-08-01,46353,SL-1656,328.4,1.07,amber,open,,
 2026-08-01,46355,SL-1661,442.7,0.27,amber,open,,
 2026-08-01,46375,SL-1724,329.7,0.47,amber,open,,
@@ -714,7 +714,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,46556,SL-1676,311.1,1.54,amber,open,,
 2026-08-01,46562,SL-1714,317.0,1.2,amber,open,,
 2026-08-01,46563,SL-1730,364.8,0.5,amber,open,,
-2026-08-01,46582,SL-1728,292.3,1.94,amber,open,,
+2026-08-01,46582,SL-1728,292.3,1.94,amber,reentered,2026-08-21,20
 2026-08-01,46674,SL-1718,300.3,1.89,amber,open,,
 2026-08-01,46685,SL-1781,314.5,1.52,amber,open,,
 2026-08-01,46698,SL-1797,340.0,0.77,amber,open,,
@@ -800,7 +800,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,53653,SL-4390,385.0,3.65,amber,open,,
 2026-08-01,53669,SL-4464,370.3,1.59,amber,open,,
 2026-08-01,53673,SL-4456,346.9,2.63,amber,open,,
-2026-08-01,53681,SL-4424,282.0,2.71,amber,open,,
+2026-08-01,53681,SL-4424,282.0,2.71,amber,reentered,2026-08-21,20
 2026-08-01,53800,SL-4720,380.7,0.22,amber,open,,
 2026-08-01,53902,SL-5021,484.9,0.01,amber,open,,
 2026-08-01,53904,SL-4787,466.9,0.01,amber,open,,
@@ -908,3 +908,6 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-20,65447,SL-34920,472.8,0.45,red,open,,
 2026-08-20,65451,SL-35039,472.8,0.47,red,open,,
 2026-08-20,65455,SL-34728,472.7,-0.2,red,open,,
+2026-08-21,51105,SL-3350,467.1,0.58,red,open,,
+2026-08-21,52601,SL-4027,467.3,0.62,red,open,,
+2026-08-21,52602,SL-4012,467.1,0.49,red,open,,
