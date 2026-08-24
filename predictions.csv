@@ -690,7 +690,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,45780,SL-1496,349.7,0.46,amber,open,,
 2026-08-01,46077,SL-1559,443.2,0.35,amber,open,,
 2026-08-01,46080,SL-1568,398.1,0.28,amber,open,,
-2026-08-01,46129,SL-1623,293.5,2.08,amber,open,,
+2026-08-01,46129,SL-1623,293.5,2.08,amber,reentered,2026-08-24,23
 2026-08-01,46141,SL-1596,370.2,0.38,amber,open,,
 2026-08-01,46142,SL-1597,300.3,1.12,amber,open,,
 2026-08-01,46146,SL-1608,449.8,0.36,amber,open,,
@@ -699,7 +699,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,46167,SL-1626,298.7,1.29,amber,open,,
 2026-08-01,46173,SL-1640,312.0,1.16,amber,open,,
 2026-08-01,46174,SL-1641,360.3,0.5,amber,open,,
-2026-08-01,46329,SL-1695,295.4,1.96,amber,open,,
+2026-08-01,46329,SL-1695,295.4,1.96,amber,reentered,2026-08-24,23
 2026-08-01,46342,SL-1762,443.4,0.37,amber,open,,
 2026-08-01,46348,SL-1553,440.5,0.2,amber,open,,
 2026-08-01,46351,SL-1646,266.7,4.05,amber,reentered,2026-08-12,11
@@ -724,7 +724,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,46718,SL-1821,395.1,0.57,amber,open,,
 2026-08-01,46723,SL-1826,242.3,6.35,amber,reentered,2026-08-07,6
 2026-08-01,46725,SL-1828,342.3,0.59,amber,open,,
-2026-08-01,46727,SL-1830,296.9,1.92,amber,open,,
+2026-08-01,46727,SL-1830,296.9,1.92,amber,reentered,2026-08-24,23
 2026-08-01,46743,SL-1892,306.1,1.47,amber,open,,
 2026-08-01,46782,SL-1835,302.0,1.24,amber,open,,
 2026-08-01,46786,SL-1893,329.1,0.85,amber,open,,
@@ -804,7 +804,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,53800,SL-4720,380.7,0.22,amber,open,,
 2026-08-01,53902,SL-5021,484.9,0.01,amber,open,,
 2026-08-01,53904,SL-4787,466.9,0.01,amber,open,,
-2026-08-01,54092,SL-5190,280.7,1.74,amber,open,,
+2026-08-01,54092,SL-5190,280.7,1.74,amber,reentered,2026-08-24,23
 2026-08-01,54193,SL-5263,500.6,0.36,red,open,,
 2026-08-01,54205,SL-5249,492.9,7.44,red,open,,
 2026-08-01,56355,SL-5533,296.4,3.33,red,open,,
