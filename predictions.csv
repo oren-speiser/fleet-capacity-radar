@@ -749,7 +749,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,47676,SL-2083,246.9,5.81,amber,reentered,2026-08-07,6
 2026-08-01,47749,SL-2163,262.8,3.66,amber,reentered,2026-08-12,11
 2026-08-01,47752,SL-2169,314.6,1.5,amber,reentered,2026-09-09,39
-2026-08-01,47762,SL-2180,321.0,1.31,amber,open,,
+2026-08-01,47762,SL-2180,321.0,1.31,amber,reentered,2026-09-11,41
 2026-08-01,47776,SL-2209,310.9,1.46,amber,reentered,2026-09-02,32
 2026-08-01,47778,SL-2211,385.5,3.34,amber,open,,
 2026-08-01,47788,SL-2314,440.7,0.33,amber,open,,
