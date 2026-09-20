@@ -178,7 +178,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,50849,SL-3311,507.7,3.9,state-decaying,open,,
 2026-07-02,52631,SL-3794,522.4,3.83,state-decaying,open,,
 2026-07-02,47862,SL-2291,358.6,3.69,state-decaying,reentered,2026-09-14,74
-2026-07-02,52579,SL-3893,422.6,3.68,state-decaying,open,,
+2026-07-02,52579,SL-3893,422.6,3.68,state-decaying,reentered,2026-09-20,80
 2026-07-02,51135,SL-3363,516.9,3.57,state-decaying,open,,
 2026-07-02,53858,SL-4798,250.9,3.55,state-decaying,reentered,2026-07-12,10
 2026-07-02,53895,SL-5032,251.2,3.53,state-decaying,reentered,2026-07-12,10
@@ -622,7 +622,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,45375,SL-1302,357.9,0.36,amber,open,,
 2026-08-01,45376,SL-1304,370.4,0.27,amber,open,,
 2026-08-01,45377,SL-1305,340.1,0.54,amber,open,,
-2026-08-01,45379,SL-1319,312.7,0.69,amber,open,,
+2026-08-01,45379,SL-1319,312.7,0.69,amber,reentered,2026-09-20,50
 2026-08-01,45383,SL-1266,363.5,0.34,amber,open,,
 2026-08-01,45384,SL-1267,347.9,0.47,amber,open,,
 2026-08-01,45386,SL-1272,330.7,0.52,amber,open,,
@@ -728,9 +728,9 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,46743,SL-1892,306.1,1.47,amber,reentered,2026-08-27,26
 2026-08-01,46782,SL-1835,302.0,1.24,amber,reentered,2026-09-01,31
 2026-08-01,46786,SL-1893,329.1,0.85,amber,reentered,2026-09-18,48
-2026-08-01,46794,SL-1942,330.1,0.59,amber,open,,
+2026-08-01,46794,SL-1942,330.1,0.59,amber,reentered,2026-09-20,50
 2026-08-01,47122,SL-1777,336.2,0.31,amber,open,,
-2026-08-01,47135,SL-1845,325.9,0.57,amber,open,,
+2026-08-01,47135,SL-1845,325.9,0.57,amber,reentered,2026-09-20,50
 2026-08-01,47143,SL-1856,338.7,0.38,amber,open,,
 2026-08-01,47157,SL-1871,449.9,0.45,amber,open,,
 2026-08-01,47158,SL-1873,266.3,3.59,amber,reentered,2026-08-13,12
@@ -1014,3 +1014,10 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-09-19,65070,SL-34794,472.7,0.08,red,open,,
 2026-09-19,65592,SL-35267,472.7,-0.01,red,open,,
 2026-09-19,65611,SL-35186,472.7,-0.04,red,open,,
+2026-09-20,53170,SL-4095,498.3,0.49,red,open,,
+2026-09-20,53994,SL-5125,493.4,-0.1,red,open,,
+2026-09-20,56352,SL-5885,511.6,4.17,red,open,,
+2026-09-20,65061,SL-34750,472.6,-0.09,red,open,,
+2026-09-20,65072,SL-34735,472.7,-0.07,red,open,,
+2026-09-20,65602,SL-35255,472.7,0.16,red,open,,
+2026-09-20,65610,SL-35178,472.7,0.23,red,open,,
