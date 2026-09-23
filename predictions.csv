@@ -182,7 +182,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-07-02,51135,SL-3363,516.9,3.57,state-decaying,open,,
 2026-07-02,53858,SL-4798,250.9,3.55,state-decaying,reentered,2026-07-12,10
 2026-07-02,53895,SL-5032,251.2,3.53,state-decaying,reentered,2026-07-12,10
-2026-07-02,53492,SL-4451,428.8,3.5,state-decaying,open,,
+2026-07-02,53492,SL-4451,428.8,3.5,state-decaying,reentered,2026-09-23,83
 2026-07-02,53935,SL-5000,252.6,3.48,state-decaying,reentered,2026-07-12,10
 2026-07-02,62960,SL-32877,476.2,3.48,state-decaying,open,,
 2026-07-02,47652,SL-2036,362.3,3.42,state-decaying,reentered,2026-09-01,61
@@ -819,7 +819,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,58598,SL-31079,350.3,0.94,amber,open,,
 2026-08-01,58672,SL-31104,379.3,0.6,amber,open,,
 2026-08-01,58720,SL-31027,334.8,0.59,amber,open,,
-2026-08-01,59322,SL-31530,343.0,0.14,amber,open,,
+2026-08-01,59322,SL-31530,343.0,0.14,amber,reentered,2026-09-23,53
 2026-08-01,59586,SL-31704,387.0,1.72,amber,open,,
 2026-08-01,59764,SL-11111 [DTC],288.5,2.11,amber,reentered,2026-08-19,18
 2026-08-01,59768,SL-31826,403.0,1.08,amber,open,,
@@ -1040,3 +1040,17 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-09-22,56348,SL-5888,494.1,0.73,red,open,,
 2026-09-22,56353,SL-5874,503.1,0.51,red,open,,
 2026-09-22,65608,SL-35185,472.7,-0.02,red,open,,
+2026-09-23,53470,SL-4393,506.2,3.66,red,open,,
+2026-09-23,53478,SL-4433,501.9,0.03,red,open,,
+2026-09-23,53485,SL-4430,510.0,-0.14,red,open,,
+2026-09-23,53495,SL-4429,506.2,3.89,red,open,,
+2026-09-23,56326,SL-5980,504.1,0.55,red,open,,
+2026-09-23,56337,SL-5561,504.3,0.49,red,open,,
+2026-09-23,56341,SL-5543,504.6,0.48,red,open,,
+2026-09-23,56812,SL-6065,545.7,-0.04,red,open,,
+2026-09-23,65066,SL-34739,472.6,-0.13,red,open,,
+2026-09-23,65594,SL-35191,472.6,-0.1,red,open,,
+2026-09-23,65601,SL-35234,472.7,0.07,red,open,,
+2026-09-23,65603,SL-35250,472.7,0.04,red,open,,
+2026-09-23,65606,SL-35195,472.7,-0.01,red,open,,
+2026-09-23,65612,SL-35154,472.6,-0.01,red,open,,
