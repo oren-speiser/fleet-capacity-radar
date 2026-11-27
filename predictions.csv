@@ -604,7 +604,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,45080,SL-1153,446.2,0.31,amber,open,,
 2026-08-01,45087,SL-1185,417.6,0.36,amber,open,,
 2026-08-01,45096,SL-1152,407.8,0.46,amber,open,,
-2026-08-01,45100,SL-1193,355.4,0.31,amber,open,,
+2026-08-01,45100,SL-1193,355.4,0.31,amber,reentered,2026-11-27,118
 2026-08-01,45190,SL-1234,307.4,0.87,amber,reentered,2026-09-15,45
 2026-08-01,45198,SL-1154,371.4,0.3,amber,open,,
 2026-08-01,45206,SL-1209,345.4,0.47,amber,reentered,2026-11-15,106
@@ -654,7 +654,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-08-01,45565,SL-1357,348.5,0.45,amber,reentered,2026-11-17,108
 2026-08-01,45567,SL-1361,353.8,0.36,amber,reentered,2026-11-26,117
 2026-08-01,45570,SL-1376,443.4,0.34,amber,open,,
-2026-08-01,45573,SL-1321,352.3,0.39,amber,open,,
+2026-08-01,45573,SL-1321,352.3,0.39,amber,reentered,2026-11-27,118
 2026-08-01,45581,SL-1335,448.0,0.34,amber,open,,
 2026-08-01,45582,SL-1337,327.1,0.64,amber,reentered,2026-10-13,73
 2026-08-01,45586,SL-1347,351.9,0.45,amber,reentered,2026-11-26,117
@@ -1134,7 +1134,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-09-30,55637,SL-5062,529.7,0.32,red,open,,
 2026-09-30,55750,SL-5573,529.5,0.37,red,open,,
 2026-09-30,55782,SL-5826,515.6,0.42,red,open,,
-2026-09-30,55786,SL-5823,494.8,0.36,red,open,,
+2026-09-30,55786,SL-5823,494.8,0.36,red,reentered,2026-11-27,58
 2026-09-30,55788,SL-5804,523.2,0.37,red,open,,
 2026-09-30,55791,SL-5807,521.7,0.44,red,open,,
 2026-10-01,44723,SL-1017,452.8,0.16,amber,open,,
@@ -1154,7 +1154,7 @@ flag_date,norad,name,alt_at_flag,decay_kmday_at_flag,tier,status,reentry_date,le
 2026-10-01,45370,SL-1281,439.8,0.21,amber,open,,
 2026-10-01,45374,SL-1300,436.3,0.23,amber,open,,
 2026-10-01,45405,SL-1263,439.0,0.1,amber,open,,
-2026-10-01,45578,SL-1331,326.3,0.44,amber,open,,
+2026-10-01,45578,SL-1331,326.3,0.44,amber,reentered,2026-11-27,57
 2026-10-01,45580,SL-1333,436.9,0.23,amber,open,,
 2026-10-01,45660,SL-1443,449.3,0.22,amber,open,,
 2026-10-01,45676,SL-1460,437.8,0.26,amber,open,,
